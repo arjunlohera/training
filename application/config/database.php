@@ -73,11 +73,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+/**
+ * For DESKTOP-F5G1D6J server
+ */
+//  $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'hostname' => 'DESKTOP-F5G1D6J',
+// 	'username' => 'sa',
+// 	'password' => 'Falcon001!',
+// 	'database' => 'training',
+// 	'dbdriver' => 'sqlsrv',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );
+
+/**
+ * Settings For local Machine
+ */
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'DESKTOP-F5G1D6J',
-	'username' => 'sa',
-	'password' => 'Falcon001!',
+	'hostname' => 'ARJUN',
+	'username' => '',
+	'password' => '',
 	'database' => 'training',
 	'dbdriver' => 'sqlsrv',
 	'dbprefix' => '',
