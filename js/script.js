@@ -9,15 +9,15 @@ var login_form_validation = (function(){
                 pwd: "required"
             },
             messages: {
-                email: "Please enter Email ID (Validation)",
-                pwd: "Please enter Password (Validation)"
+                email: "Please enter Email ID",
+                pwd: "Please enter Password"
             },
             submitHandler: function(){
                 var form_data = $("#login_form").serialize();
-                $.post("http://localhost/Training/index.php/Login/login_validation", form_data, function(result){
-                    if(result == 1) {
+                $.post("http://localhost/Training/index.php/Login/login_validation", form_data, function(role_id) {
+                    if(role_id == 1) {
                         window.location = "http://localhost/Training/index.php/Login/admin_view";
-                    } else if(result == 2) {
+                    } else if(role_id == 2) {
                         window.location = "http://localhost/Training/index.php/Login/user_view";
                     } else {
                         $('#notice').css('display', 'block');

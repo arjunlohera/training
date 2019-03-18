@@ -1,0 +1,4 @@
+- roles and permissions with 2 users at same time login /admin /user
+- file uploading with custom file naming, override default methods DATE-UNIQID-USERID.EXT
+- mssql usage, upload a file and store its information to the mssql database
+- jquery validation add custom rule, validate dsn
