@@ -14,9 +14,13 @@
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password</label>
-                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" required>
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" value="12345" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                <button class="btn btn-primary" type="submit">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Login
+                </button>
             </form>
         </div>
     </div>

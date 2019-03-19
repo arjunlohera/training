@@ -15,11 +15,12 @@ var login_form_validation = (function(){
             submitHandler: function(){
                 var form_data = $("#login_form").serialize();
                 $.post("http://localhost/Training/index.php/Login/login_validation", form_data, function(role_id) {
+                    // alert(role_id);
                     if(role_id == 1) {
                         window.location = "http://localhost/Training/index.php/Login/admin_view";
                     } else if(role_id == 2) {
                         window.location = "http://localhost/Training/index.php/Login/user_view";
-                    } else {
+                    } else if(role_id == 'FALSE') {
                         $('#notice').css('display', 'block');
                     }
                 });
@@ -28,6 +29,6 @@ var login_form_validation = (function(){
     }
 })();
 
-$(document).ready(function(){
+$(document).ready(function() {
     login_form_validation();
 });
