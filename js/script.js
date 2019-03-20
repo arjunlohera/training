@@ -3,14 +3,27 @@
  */
 var login_form_validation = (function(){
     return function() {
+        /**
+         * Custom validation method to check for strong password
+         */
+        $.validator.addMethod("pwcheck", function(value) {
+            return /^(?=^.{8,32}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/.test(value)
+         }, 'Password must contain a lowercase[a-z], uppercase[A-Z], digit[0-9] and special character[#@$&] and must of length between[8-32]');
+
         $("form[id='login_form']").validate({
             rules: {
                 email: "required",
-                pwd: "required"
+                pwd: {
+                    pwcheck: true,
+                    required: true,
+                }
+                
             },
             messages: {
                 email: "Please enter Email ID",
-                pwd: "Please enter Password"
+                pwd: {
+                    required: "Please enter password",
+                }
             },
             submitHandler: function(){
                 var form_data = $("#login_form").serialize();

@@ -14,7 +14,7 @@
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password</label>
-                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" value="12345" required>
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" value="Ab!12345" required>
                 </div>
                 <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                 <button class="btn btn-primary" type="submit">
