@@ -29,7 +29,7 @@ class Upload extends CI_Controller {
         public function do_upload()
         {
                 $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'php|html|txt';
+                $config['allowed_types']        = 'php|html|txt|jpg|jpeg|png';
                 $config['file_name']            = date('Ymd')."-ID".$this->session->user_id."-".$this->session->fname."-".$this->session->lname."-0"; //Custom naming a file with format: [YYYYMMDD-IDuser_id-fname-lname-0.ext] 
 
                 $this->load->library('upload', $config);
