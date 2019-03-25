@@ -1,10 +1,12 @@
 <?php
-if(!isset($_SESSION['role_id']) || $this->session->role_id !== 2) {
-    redirect('http://localhost/Training/', 'location');
+if(!isset($_SESSION['role_id']) || ($this->session->role_id !== 2 && $this->session->is_login === TRUE)) {
+    redirect('/', 'location');
 }
 ?>
-<div class="container">
+<div class="container" style="min-height:30em">
     <div class="row">
-        <h1>User Home</h1>
+        <div class="col-md-4">
+            <h1>User Home</h1>
+        </div>
     </div>
 </div>
