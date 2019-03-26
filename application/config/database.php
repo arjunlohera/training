@@ -70,38 +70,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'default';
+$active_group = 'office';
 $query_builder = TRUE;
 
 /**
  * For DESKTOP-F5G1D6J server
  */
-//  $db['default'] = array(
-// 	'dsn'	=> '',
-// 	'hostname' => 'DESKTOP-F5G1D6J',
-// 	'username' => 'sa',
-// 	'password' => 'Falcon001!',
-// 	'database' => 'training',
-// 	'dbdriver' => 'sqlsrv',
-// 	'dbprefix' => '',
-// 	'pconnect' => FALSE,
-// 	'db_debug' => (ENVIRONMENT !== 'production'),
-// 	'cache_on' => FALSE,
-// 	'cachedir' => '',
-// 	'char_set' => 'utf8',
-// 	'dbcollat' => 'utf8_general_ci',
-// 	'swap_pre' => '',
-// 	'encrypt' => FALSE,
-// 	'compress' => FALSE,
-// 	'stricton' => FALSE,
-// 	'failover' => array(),
-// 	'save_queries' => TRUE
-// );
+$db['office'] = 	array(
+	'dsn'	=> '',
+	'hostname' => 'DESKTOP-F5G1D6J',
+	'username' => 'sa',
+	'password' => 'Falcon001!',
+	'database' => 'training',
+	'dbdriver' => 'sqlsrv',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
 
 /**
- * Settings For local Machine
+ * Settings For my Laptop
  */
-$db['default'] = array(
+$db['home'] = array(
 	'dsn'	=> '',
 	'hostname' => 'ARJUN',
 	'username' => '',
@@ -122,3 +122,35 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+
+/**
+ * Adding Failover
+ */
+//  $db['default']['failover'] = array(
+	// array(
+	// 	'dsn'	=> '',
+	// 	'hostname' => 'DESKTOP-F5G1D6J',
+	// 	'username' => 'sa',
+	// 	'password' => 'Falcon001!',
+	// 	'database' => 'training',
+	// 	'dbdriver' => 'sqlsrv',
+	// 	'dbprefix' => '',
+	// 	'pconnect' => FALSE,
+	// 	'db_debug' => (ENVIRONMENT !== 'production'),
+	// 	'cache_on' => FALSE,
+	// 	'cachedir' => '',
+	// 	'char_set' => 'utf8',
+	// 	'dbcollat' => 'utf8_general_ci',
+	// 	'swap_pre' => '',
+	// 	'encrypt' => FALSE,
+	// 	'compress' => FALSE,
+	// 	'stricton' => FALSE,
+	// 	'failover' => array(),
+	// 	'save_queries' => TRUE
+	//  )
+	 
+//  );
+
+
+
