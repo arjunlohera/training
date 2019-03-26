@@ -17,7 +17,7 @@ if(!isset($_SESSION['role_id']) || $this->session->is_login !== TRUE) {
                 'class' => 'btn btn-primary',
                 'title' => 'Upload New File'
             );
-            echo anchor('upload', 'Upload Another File!', $attr); 
+            echo anchor('upload/fileinput', 'Upload Another File!', $attr); 
             ?>
         </div>
     </div>

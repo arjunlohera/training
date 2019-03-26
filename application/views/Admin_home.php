@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['role_id']) || ($this->session->role_id !== 1 && $this->session->is_login === TRUE)) {
+if(!isset($_SESSION['role_id']) || ($this->session->role_id !== 1 && $this->session->is_login === FALSE)) {
     redirect('/', 'location');
 }
 ?>

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Controller to authenticate the user
+ * Redirects to specific page based on the role
+ * Written By Arjun
+ */
 class Login extends CI_Controller {
 
     /**
@@ -17,9 +22,7 @@ class Login extends CI_Controller {
      * Default load method
      */
     public function index() {
-        $this->load->view('templates/header');
-        $this->load->view('Login_form');
-        $this->load->view('templates/footer');
+        $this->load->view('admin/page_login');
     }
 
     /**
@@ -39,8 +42,6 @@ class Login extends CI_Controller {
                 'is_login' => TRUE
             );
             $this->session->set_userdata($session_vars);
-            // $this->session->set_userdata('user_id', $result->ID);
-
             /**echo role_id for (script.js) file */
             echo $result->role_id;
         } else {
@@ -52,18 +53,14 @@ class Login extends CI_Controller {
      * To show Admin view after successfully login
      */
     public function admin_view(){
-        $this->load->view('templates/header');
-        $this->load->view('Admin_home');
-        $this->load->view('templates/footer');
+        $this->load->view('admin/home');
     }
 
     /**
      * To show User view after successfully login
      */
     public function user_view(){
-        $this->load->view('templates/header');
-        $this->load->view('User_home');
-        $this->load->view('templates/footer');
+        $this->load->view('admin/home');
     }
 
     /**
@@ -71,7 +68,6 @@ class Login extends CI_Controller {
      * It destroy the current session and redirect to login page
      */
     public function logout(){
-        // $this->session->unset_userdata('role_id');
         $this->session->sess_destroy();
         redirect('/', 'location');
     }

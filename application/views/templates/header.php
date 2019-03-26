@@ -28,7 +28,7 @@
                             'title' => 'Upload a New file'
                         );
                         echo anchor('Login/logout', 'Log Out', $attr); 
-                        echo anchor('upload', 'Upload New File', $upload_file_btn_attr)
+                        echo anchor('upload', 'Upload New File', $upload_file_btn_attr);
                     ?>
                     <!-- <a class="btn btn-success btn-sm" href="http://localhost/Training/index.php/Login/logout">Log Out</a> -->
                 </div>
