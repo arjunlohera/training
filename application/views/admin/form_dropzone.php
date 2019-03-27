@@ -45,6 +45,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <link href="<?php echo base_url(); ?>assets/global/plugins/dropzone/dropzone.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>assets/global/plugins/dropzone/basic.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url('vendor/sweetalert/dist/sweetalert.css');?>" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL STYLES -->
     <link href="<?php echo base_url(); ?>assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
@@ -907,6 +908,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END CORE PLUGINS -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <script src="<?php echo base_url(); ?>assets/global/plugins/dropzone/dropzone.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url('vendor/sweetalert/dist/sweetalert.min.js');?>" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
     <script src="<?php echo base_url(); ?>assets/global/scripts/app.min.js" type="text/javascript"></script>
@@ -924,12 +926,18 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="<?php echo base_url(); ?>js/script.js" type="text/javascript"></script>
     <script>
     Dropzone.options.myAwesomeDropzone = {
+        init: function() {
+        this.on("success", function(file) { swal("File Uploaded", "Your file is successfully uploaded", "success"); });
+        this.on("error", function(file) { swal("File not Uploaded", "", "error"); });
+        },
     paramName: "userfile", // The name that will be used to transfer the file
     acceptedFiles: '.php,.html,.txt,.jpg,.jpeg,.png',
     maxFilesize: 1 // MB
     };
+    // myAwesomeDropzone.on('success', function(file){
+    //     alert("Done");
+    // });
   </script>
         <!-- END CUSTOM SCRIPTS -->
 </body>
-
 </html>
