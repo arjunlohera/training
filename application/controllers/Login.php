@@ -32,6 +32,7 @@ class Login extends CI_Controller {
      * set all the session variable after successfully login.
      */
     public function login_validation(){
+        $response['url'] = 'false';
         if($result = $this->Login_model->get_row()) {
             /** Setting the session variable */
             $session_vars = array(
@@ -43,10 +44,16 @@ class Login extends CI_Controller {
             );
             $this->session->set_userdata($session_vars);
             /**echo role_id for (script.js) file */
-            echo $result->role_id;
-        } else {
-            echo "FALSE";
-        }
+            if($result->role_id == 1) {
+                $response['url'] = base_url('index.php/Login/admin_view'); 
+                // $url = base_url('index.php/Login/admin_view'); 
+            } elseif($result->role_id == 2) {
+                $response['url'] = base_url('index.php/Login/user_view'); 
+                // $url = base_url('index.php/Login/user_view');
+            }
+        } 
+        // header("Content-type: text/json");
+        echo json_encode($response);
     }
 
     /** 
