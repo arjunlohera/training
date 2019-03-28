@@ -31,6 +31,12 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #1 for statistics, charts, recent events and reports" name="description" />
         <meta content="" name="author" />
+        <!-- BEGIN PACE PLUGIN -->
+        <script src="<?php echo base_url(); ?>/vendor/pace/pace.min.js" type="text/javascript"></script>
+        <!-- END PACE PLUGIN -->
+        <!-- BEGIN PAGE TOP STYLE -->
+        <link href="<?php echo base_url(); ?>/vendor/pace/themes/orange/pace-theme-flash.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE TOP STYLE -->
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
