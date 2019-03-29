@@ -69,6 +69,13 @@
                                             <!-- <span class="badge badge-danger">5</span> -->
                                         </a>
                                     </li>
+                                    <li class="nav-item start ">
+                                        <a href="<?php echo base_url('index.php/incident');?>" class="nav-link ">
+                                            <i class="icon-graph"></i>
+                                            <span class="title">Incident</span>
+                                            <!-- <span class="badge badge-danger">5</span> -->
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="heading">
