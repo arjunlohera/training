@@ -1,6 +1,5 @@
-/**
- * login from validation closure to validate the input fields and post an ajax request when successfully submitted.
- */
+// login from validation closure to validate the input fields and post an ajax request when successfully submitted.
+ 
 var login_form_validation = (function(){
     return function() {
         /**

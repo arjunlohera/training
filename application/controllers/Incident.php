@@ -25,7 +25,7 @@ class Incident extends CI_Controller {
         $offset = 0;
         $data['latest_incidents'] =  $this->incident_model->get_incidents($total_rows, $offset);
         // $this->load->view('templates/header');
-        $this->load->view('admin/incidents');
+        $this->load->view('admin/incidents', $data);
         // $this->load->view('templates/footer');
     }
 

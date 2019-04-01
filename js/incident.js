@@ -55,7 +55,7 @@ var validate_form = (function() {
 					function(result) {
 						if (result) {
 							$('#notice').css("display", "block");
-							$("#notice").fadeOut(1000, function(){
+							$("#notice").fadeOut(3000, function(){
 								$(this).css("display", "none");
 							});
 							$("tbody").prepend(tBody); // Appending row to DOM
@@ -76,12 +76,12 @@ var validate_form = (function() {
 
 $(document).ready(function() {
 	/**Implementing the data-table */
-	// $('#mytable').DataTable({
-	// 	scrollY:        '50vh',
-    //     scrollCollapse: true,
-	// 	paging:         false,
-	// 	order: false
-	// });
+	$('#mytable').DataTable({
+		scrollY:        '50vh',
+        scrollCollapse: true,
+		paging:         false,
+		order: false
+	});
 	date_picker();
 	validate_form();
 	

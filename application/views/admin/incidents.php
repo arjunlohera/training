@@ -44,6 +44,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="<?php echo base_url(); ?>assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL STYLES -->
     <link href="<?php echo base_url(); ?>assets/global/css/components.min.css" rel="stylesheet" id="style_components"
@@ -293,6 +295,49 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                            <div class="col-md-12">
+                                <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                                <div class="portlet light bordered">
+                                    <div class="portlet-title">
+                                        <div class="caption font-dark">
+                                            <i class="icon-settings font-dark"></i>
+                                            <span class="caption-subject bold uppercase">All Incidents</span>
+                                        </div>
+                                        <div class="tools"> </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <table class="table table-striped table-bordered table-hover order-column" id="mytable">
+                                        <thead class="table-success">
+                                            <tr>
+                                                <th style="width: 15%" scope="col">Date</th>
+                                                <th style="width: 15%" scope="col">Type</th>
+                                                <th style="width: 60%" scope="col">Description</th>
+                                                <th style="width: 10%" scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                    <?php if(isset($latest_incidents)) {
+                    foreach($latest_incidents as $item) {
+                    ?>
+                    <tr>
+                        <td><?php echo $item->date; ?></td>
+                        <td><?php echo $item->type; ?></td>
+                        <td class="text-justify"><?php echo $item->description; ?></td>
+                        <td><button class="btn btn-danger btn-sm delete_button"
+                                id="<?php echo $item->ID;?>">Delete</button></td>
+                    </tr>
+                    <?php }
+                     } else {
+                        ?>
+                    <div class="text-danger font-weight-bold">No record(s) found.</div>
+                    <?php } ?>
+                </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
                 <!-- END CONTENT BODY -->
             </div>
@@ -989,6 +1034,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN CUSTOM SCRIPTS -->
     <script src="<?php echo base_url(); ?>js/incident.js" type="text/javascript"></script>
         <!-- END CUSTOM SCRIPTS -->
+    <script src="<?php echo base_url(); ?>assets/global/scripts/datatable.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
     <script src="<?php echo base_url(); ?>assets/global/scripts/app.min.js" type="text/javascript"></script>
